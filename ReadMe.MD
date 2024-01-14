@@ -31,6 +31,8 @@
 
 To enable GuardDuty with using Terraform, the resource (6*) was used after customizing some parts.
 
+Please check the files under the https://github.com/mehmetmgrsl/aws-guardduty-work/tree/main/guardduty_terraform_module.
+
 - Run 
   - cd guarduty
   - terraform init

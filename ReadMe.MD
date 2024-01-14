@@ -27,6 +27,17 @@
   - Once you enable EKS Runtime Monitoring, GuardDuty can start monitoring and analyzing the runtime-activity events for all the existing and new EKS clusters for your accounts.
 
 
+### AWS GuardDuty with Terraform?
+
+To enable GuardDuty with using Terraform, the resource (6*) was used after customizing some parts.
+
+- Run 
+  - cd guarduty
+  - terraform init
+  - terraform plan
+  - terraform apply
+
+
 ### Resources
 
 1* https://aws.amazon.com/guardduty/
@@ -38,3 +49,5 @@
 4* https://aws.amazon.com/blogs/aws/amazon-guardduty-now-supports-amazon-eks-runtime-monitoring/
 
 5* [Amazon GuardDuty Introduction - Stephane Maarek](https://www.youtube.com/watch?v=KZz5utw3WB4)
+
+6* [AWS Guardduty Terraform - OpenWalnut](https://www.youtube.com/watch?v=pKuDpeLFxtI)

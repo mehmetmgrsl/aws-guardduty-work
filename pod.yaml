@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: webgoat-pod
+  labels:
+    app: webgoat
+spec:
+  containers:
+  - name: webgoat-container
+    image: webgoat/webgoat
+    ports:
+    - containerPort: 8080

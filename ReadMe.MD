@@ -12,6 +12,11 @@
   - Amazon Simple Storage Service (Amazon S3) data plane events, 
   - Amazon Elastic Kubernetes Service (Amazon EKS) audit logs, and 
   - Amazon Relational Database Service (Amazon RDS) login events 
+
+### How? (5*)
+
+ ![how-aws-guardduty](how-aws-guardduty.png)
+
   
 ### AWS EKS Protection with GuardDuty (4*) 
 
@@ -31,3 +36,5 @@
 3* https://docs.aws.amazon.com/guardduty/latest/ug/what-is-guardduty.html
 
 4* https://aws.amazon.com/blogs/aws/amazon-guardduty-now-supports-amazon-eks-runtime-monitoring/
+
+5* [Amazon GuardDuty Introduction - Stephane Maarek](https://www.youtube.com/watch?v=KZz5utw3WB4)

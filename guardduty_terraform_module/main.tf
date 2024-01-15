@@ -91,15 +91,22 @@ resource "aws_guardduty_detector" "mmg_guardduty" {
   finding_publishing_frequency = "FIFTEEN_MINUTES" # default SIX_HOURS
 }
 
-resource "aws_guardduty_detector_feature" "eks_runtime_monitoring" {
+# GuardDuty EKS Runtime Monitoring is managed as part of the new "Runtime Monitoring" feature.
+resource "aws_guardduty_detector_feature" "runtime_monitoring" {
   detector_id = aws_guardduty_detector.mmg_guardduty.id
-  name        = "EKS_RUNTIME_MONITORING"
+  name        = "RUNTIME_MONITORING"
   status      = "ENABLED"
 
   additional_configuration {
     name   = "EKS_ADDON_MANAGEMENT"
     status = "ENABLED"
+  }  
+
+  additional_configuration {
+    name   = "ECS_FARGATE_AGENT_MANAGEMENT"
+    status = "ENABLED"
   }
+
 }
 
 

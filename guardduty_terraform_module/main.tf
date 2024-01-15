@@ -89,20 +89,46 @@ resource "aws_kms_key" "guardduty_key" {
 resource "aws_guardduty_detector" "mmg_guardduty" {
   enable = true
   finding_publishing_frequency = "FIFTEEN_MINUTES" # default SIX_HOURS
+}
 
-  datasources {
-    s3_logs {
-      enable = false
-    }
-    malware_protection {
-      scan_ec2_instance_with_findings {
-        ebs_volumes {
-          enable = false
-        }
-      }
-    }
+resource "aws_guardduty_detector_feature" "eks_runtime_monitoring" {
+  detector_id = aws_guardduty_detector.mmg_guardduty.id
+  name        = "EKS_RUNTIME_MONITORING"
+  status      = "ENABLED"
+
+  additional_configuration {
+    name   = "EKS_ADDON_MANAGEMENT"
+    status = "ENABLED"
   }
 }
+
+
+resource "aws_guardduty_detector_feature" "disable_lambda_network_logs_monitoring" {
+  detector_id = aws_guardduty_detector.mmg_guardduty.id
+  name        = "LAMBDA_NETWORK_LOGS"
+  status      = "DISABLED"
+}
+
+
+resource "aws_guardduty_detector_feature" "disable_ebs_malware_protection_monitoring" {
+  detector_id = aws_guardduty_detector.mmg_guardduty.id
+  name        = "EBS_MALWARE_PROTECTION"
+  status      = "DISABLED"
+}
+
+
+resource "aws_guardduty_detector_feature" "disable_rds_login_events_monitoring" {
+  detector_id = aws_guardduty_detector.mmg_guardduty.id
+  name        = "RDS_LOGIN_EVENTS"
+  status      = "DISABLED"
+}
+
+resource "aws_guardduty_detector_feature" "disable_s3_data_events_monitoring" {
+  detector_id = aws_guardduty_detector.mmg_guardduty.id
+  name        = "S3_DATA_EVENTS"
+  status      = "DISABLED"
+}
+
 
 resource "aws_guardduty_publishing_destination" "findings_bucket" {
   destination_arn = aws_s3_bucket.guardduty.arn

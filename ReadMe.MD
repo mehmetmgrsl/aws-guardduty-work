@@ -53,3 +53,5 @@ Please check the files under the https://github.com/mehmetmgrsl/aws-guardduty-wo
 5* [Amazon GuardDuty Introduction - Stephane Maarek](https://www.youtube.com/watch?v=KZz5utw3WB4)
 
 6* [AWS Guardduty Terraform - OpenWalnut](https://www.youtube.com/watch?v=pKuDpeLFxtI)
+
+7* https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/guardduty_detector_feature#example-usage

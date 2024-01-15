@@ -22,10 +22,10 @@
 
 - GuardDuty launched Amazon EKS protection to monitor control plane activity by analyzing Kubernetes audit logs from existing and new EKS clusters in your accounts. 
 
-- Configure EKS Runtime Monitoring in GuardDuty (enable EKS Runtime Monitoring)
+- Configure EKS Protection in GuardDuty:
   - ![EKS Protection](eks-protection.png)
-  - Once you enable EKS Runtime Monitoring, GuardDuty can start monitoring and analyzing the runtime-activity events for all the existing and new EKS clusters for your accounts.
-
+  - Once you enable EKS Audit Log Monitoring, GuardDuty starts monitoring Kubernetes audit logs that capture API activity within your EKS cluster to detect threats.
+  - To enable EKS Runtime Monitoring use the "Runtime Monitoring" section.
 
 ### AWS GuardDuty with Terraform?
 

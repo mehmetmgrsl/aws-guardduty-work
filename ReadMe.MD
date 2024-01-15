@@ -40,6 +40,16 @@ Please check the files under the https://github.com/mehmetmgrsl/aws-guardduty-wo
   - terraform apply
 
 
+### Generating sample findings through the GuardDuty (8*)
+
+1. Open the GuardDuty console at https://console.aws.amazon.com/guardduty/.
+
+2. Choose Settings.
+
+3. Under Sample findings, choose Generate sample findings.
+
+4. Choose Findings. The sample findings are displayed on the Current findings page with the prefix [SAMPLE].
+
 ### Resources
 
 1* https://aws.amazon.com/guardduty/
@@ -55,3 +65,5 @@ Please check the files under the https://github.com/mehmetmgrsl/aws-guardduty-wo
 6* [AWS Guardduty Terraform - OpenWalnut](https://www.youtube.com/watch?v=pKuDpeLFxtI)
 
 7* https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/guardduty_detector_feature#example-usage
+
+8* https://docs.aws.amazon.com/guardduty/latest/ug/sample_findings.html

@@ -86,6 +86,11 @@ resource "aws_kms_key" "guardduty_key" {
   policy                  = data.aws_iam_policy_document.guardduty_kms.json
 }
 
+resource "aws_kms_alias" "guardduty_key" {
+  name          = "alias/guardduty-kms"
+  target_key_id = aws_kms_key.guardduty_key.key_id
+}
+
 resource "aws_guardduty_detector" "mmg_guardduty" {
   enable = true
   finding_publishing_frequency = "FIFTEEN_MINUTES" # default SIX_HOURS
